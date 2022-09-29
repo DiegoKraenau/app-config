@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ing
+  annotations:
+    kubernetes.io/ingress.class: gce
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix 
+        path: /app-test-1
+        backend:
+          service: 
+            name: app-test-1
+            port:
+              number: 3000
+      - pathType: Prefix 
+        path: /app-test-2
+        backend:
+          service: 
+            name: app-test-2
+            port:
+              number: 3001
