@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: app-test-2
-        image: diegokraenau/app-test-2
+        image: diegokraenau/app-test-2:latest
+        imagePullPolicy: Always
         readinessProbe:
           httpGet:
             path: /app-test-2
